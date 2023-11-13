@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
+
+:root {
+    --base-bg: #001C3E;
+    --complement: #279EFF;
+    --analog: #40F8FF;
+    --azure: #0479E0;
+    --royal: #00246c;
+    --white: #EEEEEE;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--base-bg);
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formSection {
+    width: 600px;
+    border: none;
+    background: var(--complement);
+    margin: 100px 20px;
+    padding: 20px;
+    border-radius: 5px;
+    color: #000;
+    position: absolute;
+    display: none;
+}
+
+
+
+.formSection h3{
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.formSection div {
+    margin: 10px 0;
+}
+
+.date-time{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.date-time div {
+    width: 100%;
+}
+
+.formSection label {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.formSection input,
+.formSection textarea {
+    font-weight: 200;
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background: var(--white);
+    color: var(--base-bg);
+}
+
+.formSection select{
+    padding: 5px;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    background: var(--white);
+    color: var(--base-bg);
+    font-weight: lighter;
+}
+
+/* .formSection textarea {
+    width: 100%;
+} */
+.formSection textarea {
+    height: 100px;
+    resize: none;
+}
+
+input::placeholder, 
+textarea::placeholder {
+    font-family: 'Kanit';
+    font-size: 14px;
+    color: #0C356A;
+    font-weight: lighter;
+}
+
+.addDataBtn,
+.updateBtn {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 300;
+    border: none;
+    border-radius: 20px;
+    color: var(--white);
+    background: var(--royal);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.taskList{
+    /* background-color: #435585; */
+    color: #fff;
+    margin: 100px;
+    display: grid;
+    gap: 50px 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.task{
+    background-color: var(--royal);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin: 5px;
+    width: 100%;
+}
+
+.taskFecha {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.taskTitulo {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.2em;
+    max-height: 2.4em;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.playerBtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    margin: 0 5px;
+}
+
+.playIcon {
+    color: var(--analog);
+    font-size: 50px;
+}
+
+
+#add-task-form-section{
+    display: none;
+}
+
+#update-task-form-section{
+    display: none;
+}
+
+#settings-form-section{
+    display: none;
+    height: 500px;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.closeBtn{
+    background-color: transparent;
+    width: 30px;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    /* left: 90%;
+    top: -10%; */
+    /* transform: translate(-50%); */
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.closeIcon {
+    font-size: 32px;
+    color: var(--royal);
+    text-align: center;
+}
+
+
+.nav-menu{
+    background-color: var(--azure);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    color: #fff;
+}
+
+.nav-menu span {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-button{
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav-button:hover {
+    font-size: 18px;
+    padding: 0px 10px;
+}
+
+#menuIconContainer{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .taskList {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .taskList {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 15px;
+    }
+
+    .buttons-container{
+        display: none;
+    }
+
+    #menuIconContainer{
+        display: block;
+        font-size: 32px;
+        color: var(--white);
+        cursor: pointer;
+    }
+
+    .formSection {
+        width: 90%;
+    }
+}
+
+.container-mobile {
+    position: absolute;
+    /* top: 100px; */
+    background-color: #0479E0;
+    opacity: 0.9;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    display: block;
+}
+
+
+.buttons-container-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: 100px;
+    position: relative;
+    gap: 100px;
+}
+
+.container-mobile button {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.container-mobile button:hover {
+    font-size: 36px;
+}
+
+.closeMenuIcon{
+    font-size: 36px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+/* .taskList{
+    color: #fff;
+    margin: 100px;
+    display: grid;
+    gap: 50px 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.task{
+    background-color: var(--royal);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin: 5px;
+    width: 100%;
+} */

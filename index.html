@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Crud</title>
+</head>
+<body>
+    
+    <div class="nav-menu">
+        <div><span>TaskManager</span></div>
+        <div class="buttons-container">
+            <button class="nav-button" id="nav-new-task">Nueva tarea</button>
+            <button class="nav-button" id="nav-update-task">Actualizar</button>
+            <button class="nav-button" id="nav-settings">Configuraciones</button>
+        </div>
+        <div class="menuIcon" id="menuIconContainer">
+            <i class="menuIcon bi bi-list"></i>
+        </div>
+    </div>
+
+    <div class="formSection" id="add-task-form-section">
+        <form action="" id="add-task-form" class="form">
+            <div class="form-header">
+                <h3>Nueva tarea</h3>
+    
+                <button class="closeBtn" id="newCloseBtn">
+                    <i class="closeIcon bi bi-x-circle-fill"></i>
+                </button>
+            </div>
+
+            <div>
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" placeholder="Ingrese titulo">
+            </div>
+
+            <div>
+                <label for="descripcion">Descripcion</label>
+                <textarea id="descripcion" placeholder="Ingrese descripcion"></textarea>
+            </div>
+            
+            <div>
+                <label for="estado">Estado</label>
+                <select name="" id="estado">
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en-progreso">En progreso</option>
+                    <option value="concluido">Concluido</option>
+                </select>
+            </div>
+
+            <button class="addDataBtn">Aniadir</button>
+        </form>
+    </div>
+    <br>
+
+    <div class="taskList" >
+    
+    </div>
+
+    <br>
+    <br>
+    <div class="formSection"id="update-task-form-section">
+        <form action="" id="update-task-form" class="form">
+            <div class="form-header">
+                <h3>Cambiar estado de tarea</h3>
+                
+                <button class="closeBtn" id="updateCloseBtn">
+                    <i class="closeIcon bi bi-x-circle-fill"></i>
+                </button>
+            </div>
+
+            <div class="task-name-list">
+                <label for="task-name">Tarea</label>
+                <select id="task-selector">
+                </select>
+            </div>
+            
+            <div class="taskContent" id="task-content">
+                
+            </div>
+            
+            <div>
+                <label for="estado">Cambiar estado</label>
+                <select name="" id="estado-conclusion">
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en-progreso">En progreso</option>
+                    <option value="concluido">Concluido</option>
+                </select>
+            </div>
+
+            <button class="updateBtn">Actualizar</button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="formSection" id="settings-form-section">
+        <form id="settings-form" class="form">
+            <div class="form-header">
+                <h3>Configuracion</h3>
+    
+                <button class="closeBtn" id="settingsCloseBtn">
+                    <i class="closeIcon bi bi-x-circle-fill"></i>
+                </button>
+            </div>
+
+            <div>
+                <label for="voice-selector">Cambiar idioma</label>
+                <select name="" id="voice-selector">
+                </select>
+            </div>
+            
+            <div class="taskContent" id="task-content">
+                <label for="audio-speed">Velocidad de audio</label>
+                <input type="range"  min="-1" max="2" value="1" id="audio-speed">
+            </div>
+        </form>
+    </div>
+
+
+    <script src="taskManager.js"></script>
+</body>
+</html>
